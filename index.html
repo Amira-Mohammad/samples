@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="parent">
+            <div class="child"><span>stop 1</span>
+                <div class="bullet"></div>
+            </div>
+            <div class="child"><span>stop 2</span><div class="bullet"></div></div>
+            <div class="child"><span>stop 3</span><div class="bullet"></div></div>
+        </div>
+    <!-- <div class="first"> ssssssss</div>  -->
+    <br/>
+    <input type="text" name="name"  />
+    <input type="text" name="age"  />
+    <select id="gender">
+        <option value="male" selected>male</option>
+        <option value="female" >female</option>
+    </select>
+    <button id="insert">insert</button>
+    <br>
+
+<input class="mx-1" id="search-Input" type="text" dir="auto"/>
+        <table border="1px solid black">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+                <tbody id = "tableBody">
+                </tbody>   
+        </table> 
+        <br><br><br>
+        <div>
+            <input id="userValue" type="text"  /> 
+            <input id="submitInsert" type="submit" value="submit" />
+            <ul id="myList">
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+            </ul>
+        </div>
+    </div>
+<script src="js/jquery.min.js"></script>   
+<script src="js/index.js"></script>  
+<script>
+    $(document).ready(function(){
+        $("#submitInsert").on("click", function(){
+            userValue = $("#userValue").val();
+            if (userValue !== ""){
+            newValue = $("#userValue").val();
+            $("#myList").append(`<li>${newValue}</li>`);
+            $("#userValue").val("");
+            array = $("#myList li").toArray();
+            console.log(array)
+        }else{
+            console.log("you must type a value")
+            $("#userValue").css({"border" : "1px red solid",
+            "box-shadow": "1px 1px 1px red"}).attr("placeholder","you must type a value");
+        }
+        });
+        $("#userValue").on("keyup", function(){
+            $(this).removeAttr("placeholder").css({"border" : "1px initial solid" , "box-shadow": "none" });
+        })
+    });
+    </script>  
+</body>
+</html>

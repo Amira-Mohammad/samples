@@ -1,0 +1,60 @@
+.container{
+    margin: 20px auto;
+    padding-left: 30px;
+}
+
+.child{
+    border-left:6px solid black; 
+    width: 200px;
+    height:90px; 
+    position:relative;
+    white-space: nowrap;
+    
+    
+}
+.child span{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding-left: 25%;
+}
+.bullet{
+top: 50%;
+left:0; 
+bottom: 0;
+position:absolute;
+width: 25px;
+height: 25px;
+border-radius: 50%;
+background-color: black;
+transform: translate(-60% , -50%);
+}
+#tableBody tr :odd{
+    background-color: cornflowerblue;
+}
+
+
+
+
+
+
+
+
+.first:before {
+    content: "";
+    background-image: url(Capture.PNG);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: -1;
+    transform: scaleX(-1);
+}
+
+
